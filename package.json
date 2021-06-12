@@ -1,0 +1,36 @@
+{
+"name": "node-casm", "version": "0.0.0", "author": "d4tocchini",
+"description": "one addon to rule them all & in the runtime bind them",
+"homepage": "https://github.com/d4tocchini/node-c#readme", "repository": {"type":"git","url":"git+https://github.com/d4tocchini/node-c.git"}, "bugs": {"url":"https://github.com/d4tocchini/node-c/issues"},
+"license": "ISC",
+
+    "scripts":
+    {
+        "script": "node scripts ",
+        "build": "source scripts.sh; build ",
+        "__build": "node scripts build  ",
+        "__build-electron": "node-gypcc --gyp-runtime=electron -I./ -I${PREFIX}/include -L${PREFIX}/lib -ltcc -o build/electron",
+        "rebuild": "node scripts rebuild -I. casm.c ",
+        "test": "source scripts.sh; test ",
+        "electron": "electron ./demo/electron/main.js",
+        "__install": "source scripts.sh; install"
+    },
+    "main":
+        "index.js",
+    "files":
+    [
+        "c.js",
+        "d.js",
+        "casm.js",
+        "build/",
+        "src/fs"
+    ],
+    "devdeps":{
+
+    },
+    "devDependencies":
+    {
+        "node-gypcc": "file://../node-gypcc",
+        "electron": "13.x"
+    }
+}
